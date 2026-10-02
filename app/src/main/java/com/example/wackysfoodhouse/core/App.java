@@ -50,6 +50,10 @@ public class App {
         dialog.message.setText(message);
     }
 
+    public static AlertDialog showLoadingDialog(Context context, String message) {
+
+    }
+
     public static void showErrorDialog(
             Context context,
             String title,
