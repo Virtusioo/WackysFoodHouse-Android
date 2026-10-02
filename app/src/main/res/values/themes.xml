@@ -1,8 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.WackysFoodHouse" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.WackysFoodHouse" parent="Theme.Material3.Light.NoActionBar">
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">#43A047</item>
+        <item name="colorSecondary">#E53935</item>
+        <item name="colorSecondaryContainer">?attr/colorPrimary</item>
+        <item name="colorOnSecondaryContainer">@color/white</item>
     </style>
 
     <style name="Theme.WackysFoodHouse" parent="Base.Theme.WackysFoodHouse" />

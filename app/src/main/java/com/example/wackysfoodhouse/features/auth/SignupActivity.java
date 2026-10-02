@@ -108,6 +108,7 @@ public class SignupActivity extends AppCompatActivity {
 
                                 if (task.isSuccessful()) {
                                     NavigationActivity.start(v.getContext());
+                                    finish();
                                 } else {
                                     App.showErrorDialog(
                                             v.getContext(),
@@ -120,17 +121,10 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
 
-
-        ui.back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
         ui.login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                LoginActivity.start(v.getContext());
                 finish();
             }
         });

@@ -113,6 +113,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                 if (task.isSuccessful()) {
                                     NavigationActivity.start(v.getContext());
+                                    finish();
                                 } else {
                                     App.showErrorDialog(
                                             v.getContext(),
@@ -129,6 +130,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SignupActivity.start(v.getContext());
+                finish();
             }
         });
     }
