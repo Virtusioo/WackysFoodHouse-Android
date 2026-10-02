@@ -1,4 +1,4 @@
-package com.example.wackysfoodhouse.features.home;
+package com.example.wackysfoodhouse.features.food;
 
 import android.os.Bundle;
 
@@ -11,12 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.wackysfoodhouse.R;
+import com.example.wackysfoodhouse.databinding.FragmentFoodBinding;
 import com.example.wackysfoodhouse.databinding.FragmentHomeBinding;
-import com.google.android.material.search.SearchView;
 
-public class HomeFragment extends Fragment {
+public class FoodFragment extends Fragment {
 
-    public HomeFragment() {
+    public FoodFragment() {
         // Required empty public constructor
     }
 
@@ -25,13 +25,13 @@ public class HomeFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
-    public FragmentHomeBinding ui;
+    public FragmentFoodBinding ui;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        ui = FragmentHomeBinding.inflate(inflater, container, false);
+        ui = FragmentFoodBinding.inflate(inflater, container, false);
         return ui.getRoot();
     }
 

@@ -98,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
                 if (password.isBlank()) {
-                    ui.email.setErrorEnabled(true);
+                    ui.password.setErrorEnabled(true);
                     ui.password.setError("Password is empty");
                     return;
                 }
@@ -112,8 +112,7 @@ public class LoginActivity extends AppCompatActivity {
                                 loading.cancel();
 
                                 if (task.isSuccessful()) {
-                                    NavigationActivity.start(v.getContext());
-                                    finish();
+                                    NavigationActivity.start(LoginActivity.this, ui.logo);
                                 } else {
                                     App.showErrorDialog(
                                             v.getContext(),
@@ -130,7 +129,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SignupActivity.start(v.getContext());
-                finish();
             }
         });
     }
