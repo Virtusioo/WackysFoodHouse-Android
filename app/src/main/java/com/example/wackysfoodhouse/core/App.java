@@ -1,6 +1,6 @@
 package com.example.wackysfoodhouse.core;
 
-import android.app.AlertDialog;
+import androidx.appcompat.app.AlertDialog;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 
 import com.example.wackysfoodhouse.R;
 import com.example.wackysfoodhouse.databinding.DialogBasicBinding;
+import com.example.wackysfoodhouse.databinding.DialogLoadingBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -51,7 +52,16 @@ public class App {
     }
 
     public static AlertDialog showLoadingDialog(Context context, String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        DialogLoadingBinding dialog = DialogLoadingBinding.inflate(LayoutInflater.from(context));
+        builder.setView(dialog.getRoot());
 
+        AlertDialog alert = builder.create();
+        alert.show();
+
+        dialog.title.setText(message);
+
+        return alert;
     }
 
     public static void showErrorDialog(

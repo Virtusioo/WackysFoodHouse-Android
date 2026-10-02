@@ -9,6 +9,7 @@ import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -102,13 +103,13 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
 
-                ui.progress.setVisibility(View.VISIBLE);
+                AlertDialog loading = App.showLoadingDialog(v.getContext(), "Logging you in..");
 
                 App.auth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                ui.progress.setVisibility(View.INVISIBLE);
+                                loading.cancel();
 
                                 if (task.isSuccessful()) {
                                     NavigationActivity.start(v.getContext());
